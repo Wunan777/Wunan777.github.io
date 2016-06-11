@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" type="text/css" href="tuoji.css">
+	<script type="text/javascript" src="tuoji.js"></script>
+</head>
+<body>
+	<div id="content">
+           <div id="data_div">
+
+             <div id="register">
+                  输入数据D <input type="text" id="data" value="" placeholder="请输入16进制数字">
+	             <dl>
+	               <div class="col">
+	             	<dd>R0 : <span>0000</span></dd>
+		     		<dd>R1 : <span>0000</span></dd>
+		     		<dd>R2 : <span>0000</span></dd>
+		     		<dd>R3 : <span>0000</span></dd>
+	                <dd>R4 : <span>0000</span></dd>
+	                <dd>R5 : <span>0000</span></dd>
+	                <dd>R6 : <span>0000</span></dd>
+	                <dd>R7 : <span>0000</span></dd>
+	               </div>
+	               <div class="col">
+	                <dd>R8 : <span>0000</span></dd>
+	                <dd>R9 : <span>0000</span></dd>
+	                <dd>R10 : <span>0000</span></dd>
+	                <dd>R11 : <span>0000</span></dd>    
+	                <dd>R12 : <span>0000</span></dd>
+	                <dd>R13 : <span>0000</span></dd>
+	                <dd>R14 : <span>0000</span></dd>
+	                <dd>R15 : <span>0000</span></dd>
+	               </div>          	
+	           	 </dl>
+             </div>
+           </div>
+
+	      <div id="result_div">
+		      	<div id="CZVS">
+		            <dl>
+		      			<dt class = "d0">CZVS</dt>
+		      			<dd class = "light"></dd>
+		      			<dd class = "light"></dd>
+		      			<dd class = "light"></dd>
+		      			<dd class = "light"></dd>
+		      		</dl>      		
+		      	</div>
+		      	<div id="ALU">
+		      		<dl>
+		      			<dt>ALU</dt>
+		      			<span id="alu_span">0000</span>
+		      		</dl>
+		      	</div>
+	      </div>
+
+	      <div id="control_div">
+	         <!-- 第一行 -->
+	      	 <div class="row">
+	      		<div class="info">
+	      			<dl>
+	      		  	 <dd>I8</dd>
+	      		  	 <dd>I7</dd>
+	      		  	 <dd>I6</dd>
+	      		  	 <dd>I5</dd>
+	      		  	 <dd>I4</dd>
+	      		  	 <dd>I3</dd>
+	      		  	 <dd>I2</dd>
+	      		  	 <dd>I1</dd>
+	      		  	 <dd>I0</dd>
+	      		  	 <dd>SST</dd>
+
+	      		  	</dl> 
+	      		</div>
+	      		<div class="num">
+	      		  <dl>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd> 
+	      		  	 <!-- 12行 -->
+	      		  </dl>
+	      		</div>
+	         </div>
+
+              <!-- 第二行 -->
+	          <div class="row">
+	      		<div class="info">
+	      			<dl>
+	      		  	 <dd>SSH</dd>
+	      		  	 <dd></dd>
+	      		  	 <dd>SCI</dd>
+	      		  	 <dd></dd>
+	      		  	 <dd>B PORT</dd>
+	      		  	 <dd></dd>
+	      		  	 <dd></dd>
+	      		  	 <dd></dd>
+	      		  	 <dd>A PORT</dd>
+	      		  	 <dd></dd>
+	      		  	 <dd></dd>
+	      		  	 <dd></dd>
+	      		  	</dl> 
+	      		</div>
+	      		<div class="num">
+	      		  <dl>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd>
+	      		  	 <dd>0</dd> 
+	      		  	 <!-- 12行 -->
+	      		  </dl>
+	      		</div>
+	         </div>
+	      </div>
+		  
+
+		  <div id="button_div">
+		     <div id="start" class="button">Start</div>
+		     <div id="reset" class="button">Reset</div>
+		  </div>
+	</div>
+</body>
+</html>
