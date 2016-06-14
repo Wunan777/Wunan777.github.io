@@ -20,13 +20,11 @@ $(document).ready(function(){
               //登陆 
               $("#Login").on("click",function(){
                 $("#Login_Form").css( { display:"block"} );
-                $("#cover").css({ height:$(document.body).height()});
                 $("#cover").fadeIn();
               });
               //注册
               $("#Sign_Up").on("click",function(){
                $("#Sign_Form").css( { display:"block"} );
-               $("#cover").css({ height:$(document.body).height()});
                $("#cover").fadeIn();
               });
 

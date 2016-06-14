@@ -1,0 +1,42 @@
+#cover {
+             width: 100%;
+             height: 100%;
+             background: rgba(128,128,128,0.6);
+             position: fixed; 
+             top: 0; 
+             left: 0; 
+             z-index: 100; 
+             display: none;
+            }
+        #cover .form-group:nth-of-type(1) { margin-top: 14%;}
+        .cancel_btn { width: 40px; height: 40px;  background-image: url("../img/x.png"); background-size: 40px 40px; 
+                      cursor: pointer;
+                      position: absolute; right: 20px; top: 20px;
+                      transition: 2s;
+                  }
+        .cancel_btn:hover {
+         -webkit-transform:rotate(180deg);
+         transition: 2s;
+        }
+       
+       .Index_Form {   
+                     position: absolute; 
+                     top:50%; 
+                     left: 50%; 
+                     transform : translate(-50%,-50%);
+                     border: 1px solid rgb(224,224,224);
+                     border-radius: 4%;  
+                     background: rgba(255,255,255,1);
+                     display: none;
+                 }
+       #Login_Form { 
+                  width: 360px; 
+                  height: 360px;     
+                   
+                  }
+       #Sign_Form {
+                    width: 400px; 
+                    height: 400px;   
+                  }
+       .suggestion_area { margin-top: 10px;  color: #FF0000; font-size: 0.4rem;}
+       .error { color: #FF0000;}

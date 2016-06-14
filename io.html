@@ -2,7 +2,7 @@
 <html>
 <head>
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <title>主页</title>
+     <title>I/O分屏</title>
 
      <link href="css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
@@ -11,10 +11,8 @@
      <link rel="stylesheet" type="text/css" href="css/header.css">
      <link rel="stylesheet" type="text/css" href="css/cover.css">
      <link rel="stylesheet" type="text/css" href="css/footer.css">
-     <link rel="stylesheet" type="text/css" href="css/index.css">
-     <script src="js/jquery-2.1.1.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script type="text/javascript" src="js/index.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/io/io.css">
+
 </head>
 
 <body>    
@@ -33,18 +31,18 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">主页</a></li>
+            <li><a href="index.html">主页</a></li>
             <li><a href="#about">平台介绍</a></li>
-            <li class="dropdown">
+            <li class="dropdown active" >
                 <a href="#contact" class="dropdown-toggle" data-toggle="dropdown">
                    汇编平台<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                   <li><a href="offline.html">脱机实验</a></li>
+                   <li><a href="offline.html" >脱机运算</a></li>
                    <li class="divider"></li>
                    <li><a href="assembly.html">中断实验</a></li>
                    <li class="divider"></li>
-                   <li><a href="io.html">分屏实验</a></li>
+                   <li class="active"><a href="assembly.html">分屏实验</a></li>
                 </ul>
             </li>
             <li><a href="#" id="Login">登陆</a></li>
@@ -59,48 +57,95 @@
 
   <!-- 标题 -->
   <div class="page-header" id="header">
-     <h1>Web端汇编指令可视化编译器</h1>
-     <h4>直观，简洁，高效。汇编学习者的<strong>梦工厂。</strong></h4>
+     <h1>I/O分屏</h1>
+     <h4><a href="#">具体步骤请参考教程</a><h4>
   </div>
    
   <!-- 主要内容 -->
-  <div id="main">
-       <div id="lunbotu">
-           <div id="symbol">
-              <img src="img/group.jpg">
-           </div>
-           <div id="myCarousel" class="carousel slide">
-              <!-- 轮播（Carousel）指标 -->
-              <ol class="carousel-indicators">
-                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                 <li data-target="#myCarousel" data-slide-to="1"></li>
-                 <li data-target="#myCarousel" data-slide-to="2"></li>
-              </ol>   
-              <!-- 轮播（Carousel）项目 -->
-              <div class="carousel-inner">
-                 <div class="item active">
-                    <img src="img/zd.png"  alt="First slide" >
-                 </div>
-                 <div class="item">
-                    <img src="img/tj.png"  alt="Second slide">
-                 </div>
-                 <div class="item">
-                    <img src="img/zd.png"  alt="Third slide" >
-                 </div>
-              </div>
-              <!-- 轮播（Carousel）导航 -->
-              <a class="carousel-control left" href="#myCarousel" 
-                 data-slide="prev" id="pre_btn">&lsaquo;</a>
-              <a class="carousel-control right" href="#myCarousel" 
-                 data-slide="next" id="next_btn">&rsaquo;</a>
-           </div> 
-       </div>
-  </div>
+  <div id="content">
+   <div class="TEC" id="TEC1">
+      <div class="console" id="console1">
+      <p>TEC-XP Simulation Program</p>
+      <p>Version 2.0 2016.3.28</p>
+      <p>Computer Architectur DUT</p>
+      <p>> </p>
+      </div>
+      
+      <div id="control_div">
+        <div id="button_area">
+         <div id="Reset" class="button">Reset</div>
+         <div id="Start" class="button">Start</div>
+         <div id="btn1" class="button">Button1</div>
+         <div id="btn2" class="button">Button2</div>
+         <div id="btn3" class="button">Button3</div>
+        </div>
+        <div class="register" id="register1">
+         <dl>
+          <dd><p>R0<span  class="R0">0000</span></p></dd>
+          <dd><p>R1<span  class="R1">0000</span></p></dd>
+          <dd><p>R2<span  class="R2">0000</span></p></dd>
+          <dd><p>R3<span  class="R3">0000</span></p></dd>
+          <dd><p>SP<span  class="SP">0000</span></p></dd>
+          <dd><p>PC<span  class="PC">0000</span></p></dd>
+          <dd><p>R6<span  class="R6">0000</span></p></dd>
+          <dd><p>R7<span  class="R7">0000</span></p></dd>
+          <dd><p>R8<span  class="R8">0000</span></p></dd>
+          <dd><p>R9<span  class="R9">0000</span></p></dd>
+          <dd><p>R10<span class="R10">0000</span></p></dd>
+          <dd><p>R11<span class="R11">0000</span></p></dd>
+          <dd><p>R12<span class="R12">0000</span></p></dd>
+          <dd><p>R13<span class="R13">0000</span></p></dd>
+          <dd><p>R14<span class="R14">0000</span></p></dd>
+          <dd><p>R15<span class="R15">0000</span></p></dd>
+         </dl>
+        </div>
+      </div>
+   </div>
+   <div class="TEC" id="TEC2">
+      <div class="console" id="console2">
+      <p>TEC-XP Simulation Program</p>
+      <p>Version 2.0 2016.3.28</p>
+      <p>Computer Architectur DUT</p>
+      <p>> </p>
+      </div>
+      
+      <div id="control_div">
+        <div id="button_area">
+         <div id="Reset" class="button">Reset</div>
+         <div id="Start" class="button">Start</div>
+         <div id="btn1" class="button">Button1</div>
+         <div id="btn2" class="button">Button2</div>
+         <div id="btn3" class="button">Button3</div>
+        </div>
+        <div class="register" id="register2">
+         <dl>
+          <dd><p>R0<span  class="R0">0000</span></p></dd>
+          <dd><p>R1<span  class="R1">0000</span></p></dd>
+          <dd><p>R2<span  class="R2">0000</span></p></dd>
+          <dd><p>R3<span  class="R3">0000</span></p></dd>
+          <dd><p>SP<span  class="SP">0000</span></p></dd>
+          <dd><p>PC<span  class="PC">0000</span></p></dd>
+          <dd><p>R6<span  class="R6">0000</span></p></dd>
+          <dd><p>R7<span  class="R7">0000</span></p></dd>
+          <dd><p>R8<span  class="R8">0000</span></p></dd>
+          <dd><p>R9<span  class="R9">0000</span></p></dd>
+          <dd><p>R10<span class="R10">0000</span></p></dd>
+          <dd><p>R11<span class="R11">0000</span></p></dd>
+          <dd><p>R12<span class="R12">0000</span></p></dd>
+          <dd><p>R13<span class="R13">0000</span></p></dd>
+          <dd><p>R14<span class="R14">0000</span></p></dd>
+          <dd><p>R15<span class="R15">0000</span></p></dd>
+         </dl>
+        </div>
+      </div>
+   </div>
+  </div> 
+  
 
   <!-- 底部 -->
   <div id="footer">
       <p><a href="assembly.html">脱机实验</a>/<a href="offline.html">中断实验</a></p>
-      <p>实时可视化编译，无论是学校教学还是自主学习，我们都给你提供一个近距离的平台。因为专业，所以优秀。</p>
+      <p>在线汇编平台分屏操作</p>
       <p>@2016 POWERED BY FANDESHIP TEAM</p>
   </div>
 
@@ -135,30 +180,28 @@
       </form>
      <!-- 注册 -->
      <form class="form-horizontal Index_Form" id="Sign_Form" role="form">
-
-     <h1 class="text-center">Sign Up</h1>
-
-     <div class="form-group">
+      <h1 class="text-center">Sign Up</h1>
+      <div class="form-group">
        <label class="col-sm-2 col-sm-offset-2 control-label">账号</label>
        <div class="col-sm-6">
          <input class="form-control" id="Sign_Account" 
             placeholder="输入注册账号">
        </div>
-     </div>
-     <div class="form-group">
+      </div>
+      <div class="form-group">
        <label for="inputPassword" class="col-sm-2  col-sm-offset-2 control-label">密码</label>
        <div class="col-sm-6">
          <input type="password" class="form-control" id="Sign_Password" 
             placeholder="请输入密码">
        </div>
-     </div>
-     <div class="form-group">
+      </div>
+      <div class="form-group">
        <label for="inputPassword" class="col-sm-3  col-sm-offset-1 control-label">重复密码</label>
        <div class="col-sm-6">
          <input type="password" class="form-control" id="Sign_Check_Password" 
             placeholder="确认输入密码">
        </div>
-     </div>
+      </div>
 
       <div class="col-sm-offset-4">
         <button type="button" class="btn btn-lg btn-default" id="Sign_Send"> 注册 </button>
@@ -175,6 +218,19 @@
 
 </body>
 
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/io/Tool.js"></script>
+<script type="text/javascript" src="js/io/Parse_Init_Order.js"></script>
+<script type="text/javascript" src="js/io/Parse_A_Line.js"></script>
+<script type="text/javascript" src="js/io/Parse_E_Line.js"></script>
+<script type="text/javascript" src="js/io/U_Show.js"></script>
+<script type="text/javascript" src="js/io/G_Run.js"></script>
+<script type="text/javascript" src="js/io/Fn.js"></script>
+<script type="text/javascript" src="js/io/Draw_Line.js"></script>
+<script type="text/javascript" src="js/io/io.js"></script>
 </html>
 
 
