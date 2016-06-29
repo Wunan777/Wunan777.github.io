@@ -3,9 +3,13 @@
       width: 640px;
       height: 640px;
       position: absolute;
-      top: 4px;
-      left: 4px;
+      top : 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: 0 auto;
       border: 1px solid #000;
+
   }
   #mycolor{
   	  width: 120px;

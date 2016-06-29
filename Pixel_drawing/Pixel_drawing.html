@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/init.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	
+	<canvas id="canvas" width="640" height="640">
+	</canvas>
+	<div id="mycolor">
+
+	  <div id="colorlist">
+	     <dl>
+	    	<dt>选色列表</dt>
+	    	<dd>1 <input type="color" class="colors active"></dd>
+	    	<dd>2 <input type="color" class="colors" value="#696969"></dd>
+	    	<dd>3 <input type="color" class="colors" value="#808080"></dd>
+	    	<dd>4 <input type="color" class="colors" value="#E1FFFF"></dd>
+	    	<dd>5 <input type="color" class="colors" value="#FFDEAD"></dd>
+	    	<dd>6 <input type="color" class="colors" value=""></dd>
+	    	<dd>7 <input type="color" class="colors" value=""></dd>
+	    	<dd>8 <input type="color" class="colors" value=""></dd>
+	    	<dd>9 <input type="color" class="colors" value=""></dd>
+	     </dl>
+	     <span>(数字快捷键)</span>
+	  </div>
+
+	  <div id="optionArea">
+	      <p>Brush Size</p>
+	      <select id="brushsize" >
+	   	    <option value="1">1</option>
+	   	    <option value="3">3</option>
+	   	    <option value="5">5</option>
+	   	    <option value="7">7</option>
+	   	    <option value="9">9</option>
+	   	    <option value="11">11</option>
+	   	    <option value="13">13</option>
+	   	    <option value="15">15</option>
+	   	    <option value="19">19</option>
+	   	    <option value="23">23</option>
+	   	    <option value="35">35</option>
+	   	    <option value="59">59</option>
+	   	    <option value="99">99</option>
+	   	 </select>
+	   	 <p>Board Size</p>
+	   	 <select id="CanvasSizeSelector" >
+	   	     <option value="640">640</option>
+	   	     <option value="1280">1280</option>
+	   	     <option value="2560">2560</option>
+	   	     <option value="3200">3200</option>
+	   	 </select>
+	  </div>
+	   
+      <div id="controlArea">
+		    <div id="LineBtn" class="controlDiv">
+		        <span> Hide Line </span>
+		    </div>
+		    <div id="export" class="controlDiv" >
+		        <span  id="btn-download">Watch Image</span>
+		    </div>
+		    <div id="BlockNumBtn" class="controlDiv">
+		        Change block number
+		    </div>
+		    <div id="get_Rectlist" class="controlDiv">
+		        save
+		    </div>
+      </div>
+	</div>
+	
+</body>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/canvas_init.js"></script>
+
+</html>
