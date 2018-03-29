@@ -61,7 +61,7 @@ var  R_Arr = {
 var SP = [];
 var C = "0";   // 针对每一位的操作,当有进位时为1,没有进位的时候为0;
 var Z = "1";   // 一次计算当计算结果为0时,为1,否则为0;
-var FLAG = 1;  // 默认是开中断的
+           var FLAG = 0;  // 默认是开中断的
 var Level = 0;
 var Level_Change = 0;
 function Init()
@@ -158,11 +158,12 @@ function Jump1()
   Level_Change = 1;
   if( status == 3 && FLAG == 1 && Level_Change > Level)
   { // 中断跳转
-    alert( "跳转前"+cursor.toString(16) );
+      // alert( "跳转前"+cursor.toString(16) );
     Stack_Push( "$" + Level + "#" + cursor);
     cursor = parseInt("2404",16);
-    alert( cursor.toString(16) ); 
+      // alert( cursor.toString(16) );
     Level = Level_Change;
+      FLAG = 0;
   }
 }
 function Jump2()
@@ -170,11 +171,12 @@ function Jump2()
   Level_Change = 2;
   if( status ==3 && FLAG == 1 && Level_Change > Level)
   {
-    alert( "跳转前"+cursor.toString(16) );
+      // alert( "跳转前"+cursor.toString(16) );
     Stack_Push("$" + Level + "#" + cursor);
     cursor = parseInt("2408",16);
-    alert( cursor.toString(16) );
+      // alert( cursor.toString(16) );
     Level = Level_Change;
+      FLAG = 0;
   }
 }
 function Jump3()
@@ -182,10 +184,11 @@ function Jump3()
   Level_Change = 3;
   if( status == 3 && FLAG == 1 && Level_Change > Level)
   {
-     alert( "跳转前"+cursor.toString(16) );
+      // alert( "跳转前"+cursor.toString(16) );
      Stack_Push("$" + Level + "#" + cursor);
      cursor = parseInt("240C",16);
-     alert( cursor.toString(16) );
+      // alert( cursor.toString(16) );
      Level = Level_Change;
+      FLAG = 0;
   }
 }
