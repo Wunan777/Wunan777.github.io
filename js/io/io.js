@@ -66,10 +66,12 @@
       EventUtil.addHandler(T1,"mouseover",function(){
           TEC1.screen1 = 1;
           TEC1.screen2 = 0;
+          TEC1.num = 1
           // TEC2.screen = 0;
       });
       EventUtil.addHandler(T2,"mouseover",function(){
           // TEC2.screen = 1;
+          TEC1.num = 2;
           TEC1.screen2 = 1;
           TEC1.screen1 = 0;
       });

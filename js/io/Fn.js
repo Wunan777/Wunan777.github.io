@@ -372,16 +372,11 @@
              console.log("输出 : " + String.fromCharCode(parseInt(Get_Port(port_num), 16)));
              ///////// 模拟外设输出
              if (arr[0] == "80") {
-                 AddCharToLastLine.call(TEC1, String.fromCharCode(parseInt(Get_Port(port_num), 16)));
-                 /////////
-                 // t 0100 0000 0000 0000
-
+                 TEC1.num = 1;
              } else if (arr[0] == "90") {
-                 AddCharToLastLine.call(TEC2, String.fromCharCode(parseInt(Get_Port(port_num), 16)));
-                 /////////
-                 // t 0100 0000 0000 0000
-
+                 TEC1.num = 2;
              }
+             AddCharToLastLine.call(TEC1, String.fromCharCode(parseInt(Get_Port(port_num), 16)));
 
          }
          function RET(arr,obj)
