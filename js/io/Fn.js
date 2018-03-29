@@ -217,7 +217,7 @@
               // arr[0] arr[1]
              var res = parseInt( Get_R(arr[0] , obj) , 16 ) - parseInt( Get_R(arr[1] , obj) , 16 );
 
-             if( res > 0 )        
+             if (res >= 0)
              {
                Set_C("1",obj);
              }
