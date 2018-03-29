@@ -82,8 +82,8 @@ function A_To_E(content)
                  content = content.replace(order,"");
                  content = content.replace(" ",'');
                  res +=  content ;
-             }           
-             else if(/^\s*(IN|OUT)\s+(80|81)\s*$/.exec(content)!=null) //PORT
+             }
+             else if (/^\s*(IN|OUT)\s+(80|81|90|91)\s*$/.exec(content) != null) //PORT
              {   
                  content = content.replace(order,"");
                  content = content.replace(" ",'');
