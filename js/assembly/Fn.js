@@ -176,6 +176,16 @@ function CMP(arr) {
     }
 }
 
+function Check_Z(str, obj) {
+    /// ALU == 0 -> Z = '1' ;
+    if (parseInt(str) == 0) {
+        Set_Z("1", obj);
+    }
+    else {
+        Set_Z("0", obj);
+    }
+}
+
 function AND(arr) {
     var R_First = Complete_Binary(Hex_To_Binary(Get_R(arr[0])));
     var R_Second = Complete_Binary(Hex_To_Binary(Get_R(arr[1])));
@@ -264,6 +274,10 @@ function DEC(arr) {
     }
     Set_R(arr[0], Binary_To_Hex(str));
 
+}
+
+function Set_Z(str_num, obj) {
+    obj.Z = str_num;
 }
 
 function INC(arr) {
