@@ -148,9 +148,9 @@ function keyDown(e)
          var t = Complete_Binary( Hex_To_Binary( PORT["81"] ) );// 0000 0000 0000 0000
          PORT["81"] = Binary_To_Hex( t.slice(0,1) + '1' + t.slice(2) );
       }
-      else  if( status ==4) // U
-      { 
-         // U命令进行时 无法输入字符
+      else if (status == 4 || status == 5) // U D
+      {
+          // U、D命令进行时 无法输入字符
       }
 }
 function Jump1()
