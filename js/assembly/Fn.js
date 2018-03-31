@@ -369,9 +369,9 @@ function JMPA(arr) {
 function IN(arr) {
     // arr[0] -> 80/81
     // PORT[] -> R0
-    t = Get_Port(arr[0]);
-    Set_R('0', t);
-    Set_Port(arr[0], Binary_To_Hex("00" + t.slice(2)));
+    Set_R('0', Get_Port(arr[0]));
+    var t = Complete_Binary(Hex_To_Binary(Get_Port("81")));
+    Set_Port(arr[0], Binary_To_Hex(t.slice(0, 1) + "0" + t.slice(2)));
 }
 
 function PUSH(arr) {
@@ -400,7 +400,7 @@ function OUT(arr) {
     /////////
     var t = Complete_Binary(Hex_To_Binary(Get_Port("81")));
     // t 0100 0000 0000 0000
-    // Set_Port("81", Binary_To_Hex( "1" + t.slice(1) ) );
+    Set_Port("81", Binary_To_Hex("1" + t.slice(1)));
 }
 
 
