@@ -7,7 +7,6 @@ function d_read() {
     var z = PC;
     var add = "";
     for (var i = 0; i < 15; i++) {
-        //todo 输出行号
         show_content = [];
         for (var j = 0; j < 8; j++) {
             if (memory[z] == undefined) {
