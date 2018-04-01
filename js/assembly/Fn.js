@@ -161,7 +161,7 @@ function CMP(arr) {
     // arr[0] arr[1]
     var res = parseInt(Get_R(arr[0]), 16) - parseInt(Get_R(arr[1]), 16);
 
-    if (res > 0) {
+    if (res >= 0) {
         C = "1";
     }
     else {
