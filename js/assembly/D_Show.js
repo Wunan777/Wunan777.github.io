@@ -22,7 +22,7 @@ function d_read() {
         }
         read_line_D(show_content, (z - 8));
     }
-    newLine('>');
+    newLine('> ');
 }
 
 function read_line_D(arr, num) {
