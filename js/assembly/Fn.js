@@ -432,6 +432,11 @@ function CALA(arr) { //arr[0] 地址
     console.log(memory[cursor]);
 }
 
+function STRR(arr) {
+    var z = parseInt(Get_R(arr[0]), 16);
+    memory[z] = Get_R(arr[1]);
+}
+
 function EI() {
     FLAG = 1;
 }
