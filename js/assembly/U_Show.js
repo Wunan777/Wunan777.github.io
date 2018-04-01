@@ -116,6 +116,18 @@ function E_To_A(content)  // 0010
         return res;
     }
 
+    //STRR单独计算
+    if (Each_Date[0] == "STRR") {
+        if (/^[0-9A-F]{2,}$/.exec(content) != null)  // 允许多 但是参数必须够 而且要在0-9A-F之间
+        {
+            res.push("[R" + parseInt(content[0], 16).toString() + ']');
+            res.push("R" + parseInt(content[1], 16).toString());
+        }
+        else {
+            res.push("Missing_Parameter^Error!");
+        }
+    }
+
     // 找到则继续寻找参数
      if( Each_Date[2]  == 'R_2' )//低位舍弃
      {  

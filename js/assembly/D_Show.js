@@ -15,7 +15,7 @@ function d_read() {
                 for (var k = 0; k < 4 - memory[z].toString(16).length; k++) {
                     add += "0";
                 }
-                show_content[j] = add + memory[z];
+                show_content[j] = memory[z] + add;
                 add = "";
             }
             z++;
