@@ -148,7 +148,7 @@ function keyDown(e) {
         PORT["80"] = keycode.toString(16);
         // 81 次高位设为1
         var t = Complete_Binary(Hex_To_Binary(PORT["81"]));// 0000 0000 0000 0000
-        PORT["81"] = Binary_To_Hex("01" + t.slice(2));
+        PORT["81"] = Binary_To_Hex(t.slice(0, 1) + '1' + t.slice(2));
     }
     else if (status == 4 || status == 5) // U D
     {
