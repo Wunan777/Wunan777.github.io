@@ -176,13 +176,13 @@ function CMP(arr) {
     }
 }
 
-function Check_Z(str, obj) {
+function Check_Z(str) {
     /// ALU == 0 -> Z = '1' ;
     if (parseInt(str) == 0) {
-        Set_Z("1", obj);
+        Set_Z("1");
     }
     else {
-        Set_Z("0", obj);
+        Set_Z("0");
     }
 }
 
@@ -276,8 +276,8 @@ function DEC(arr) {
 
 }
 
-function Set_Z(str_num, obj) {
-    obj.Z = str_num;
+function Set_Z(str_num) {
+    Z = str_num;
 }
 
 function INC(arr) {
@@ -371,7 +371,7 @@ function IN(arr) {
     // PORT[] -> R0
     Set_R('0', Get_Port(arr[0]));
     var t = Complete_Binary(Hex_To_Binary(Get_Port("81")));
-    Set_Port(arr[0], Binary_To_Hex(t.slice(0, 1) + "0" + t.slice(2)));
+    Set_Port("81", Binary_To_Hex(t.slice(0, 1) + "0" + t.slice(2)));
 }
 
 function PUSH(arr) {
@@ -445,7 +445,7 @@ function DI() {
     FLAG = 0;
 }
 
-function IRET(arr, obj) {
+function IRET(arr) {
     FLAG = 1;
-    RET(arr, obj);
+    RET(arr);
 }
