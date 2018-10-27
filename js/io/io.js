@@ -45,7 +45,7 @@
       
        //当前正在编辑行
        // 五种类型参数 R_0,R_1,OFFSET,PORT,MVRD_NEXT
-        Init();
+        //  Init();
     };///window end
 
     function Init()

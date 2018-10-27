@@ -65,16 +65,16 @@
   <div id="content">
    <div class="TEC" id="TEC1">
       <div class="console" id="console1">
-      <p>TEC-XP Simulation Program</p>
-      <p>Version 2.0 2016.3.28</p>
-      <p>Computer Architectur DUT</p>
-      <p>> </p>
+          <!--<p>TEC-XP Simulation Program</p>-->
+          <!--<p>Version 2.0 2016.3.28</p>-->
+          <!--<p>Computer Architectur DUT</p>-->
+          <!--<p>> </p>-->
       </div>
       
       <div id="control_div">
         <div id="button_area">
          <div id="Reset" class="button">Reset</div>
-         <div id="Start" class="button">Start</div>
+            <div id="Start1" class="button">Start</div>
          <div id="btn1" class="button">Button1</div>
          <div id="btn2" class="button">Button2</div>
          <div id="btn3" class="button">Button3</div>
@@ -103,16 +103,16 @@
    </div>
    <div class="TEC" id="TEC2">
       <div class="console" id="console2">
-      <p>TEC-XP Simulation Program</p>
-      <p>Version 2.0 2016.3.28</p>
-      <p>Computer Architectur DUT</p>
-      <p>> </p>
+          <!--<p>TEC-XP Simulation Program</p>-->
+          <!--<p>Version 2.0 2016.3.28</p>-->
+          <!--<p>Computer Architectur DUT</p>-->
+          <!--<p>> </p>-->
       </div>
       
       <div id="control_div">
         <div id="button_area">
          <div id="Reset" class="button">Reset</div>
-         <div id="Start" class="button">Start</div>
+            <div id="Start2" class="button">Start</div>
          <div id="btn1" class="button">Button1</div>
          <div id="btn2" class="button">Button2</div>
          <div id="btn3" class="button">Button3</div>
@@ -235,6 +235,19 @@
 <script type="text/javascript" src="js/io/Fn.js"></script>
 <script type="text/javascript" src="js/io/Draw_Line.js"></script>
 <script type="text/javascript" src="js/io/io.js"></script>
+<script type="text/javascript">
+    $("#Start1").on('click', function () {
+        $("#console1").html("<p>TEC-XP Simulation Program</p><p>Version 2.0 2016.3.28</p><p>Computer Architectur DUT</p><p id='now'>> </p>");
+        $("#console2").html("<p>TEC-XP Simulation Program</p><p>Version 2.0 2016.3.28</p><p>Computer Architectur DUT</p><p id='now'>> </p>");
+        Init();
+    });
+
+    $("#Start2").on('click', function () {
+        $("#console1").html("<p>TEC-XP Simulation Program</p><p>Version 2.0 2016.3.28</p><p>Computer Architectur DUT</p><p id='now'>> </p>");
+        $("#console2").html("<p>TEC-XP Simulation Program</p><p>Version 2.0 2016.3.28</p><p>Computer Architectur DUT</p><p id='now'>> </p>");
+        Init();
+    })
+</script>
 </html>
 
 
