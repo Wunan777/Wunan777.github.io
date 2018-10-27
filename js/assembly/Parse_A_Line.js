@@ -71,39 +71,44 @@ function A_To_E(content)
                  content = content.replace(" ",'');
                  res += ( A_Get_R(content,2) );
              }
+             else if (/^(\s*(STRR)\s+\[R(1(0|1|2|3|4|5)|0?\d{1}|0)]\s*,\s*R(1(0|1|2|3|4|5)|0?\d{1}|0)\s*)$/.exec(content) != null) //STRR
+             {
+                 content = content.replace(order, "");
+                 content = content.replace(" ", '');
+                 res += (A_Get_R(content, 2));
+             }
              else if( /^\s*(DEC|INC|SHL|SHR|PUSH|POP)\s+R(1(0|1|2|3|4|5)|0?\d{1}|0)\s*$/.exec(content)!=null ) // R1
-             {   
+             {
                  content = content.replace(order,"");
                  content = content.replace(" ",'');
                  res += ( A_Get_R(content,1) );
              }
              else if(/^\s*(JR|JRC|JRNC|JRZ|JRNZ|JMPA|CALA)\s+[0-9A-F]{1,4}\s*$/.exec(content)!=null) // OFFSET
-             {   
+             {
                  content = content.replace(order,"");
                  content = content.replace(" ",'');
                  res +=  content ;
-             }           
+             }
              else if(/^\s*(IN|OUT)\s+(80|81)\s*$/.exec(content)!=null) //PORT
-             {   
+             {
                  content = content.replace(order,"");
                  content = content.replace(" ",'');
                  res +=  content ;
              }
              else if(/^\s*(EI|DI|RET|IRET)\s*$/.exec(content)!=null)   //NONE
-             { 
-                /////无操作
+             {
+                 /////无操作
              }
              else if(/\s*MVRD\s+R(1(0|1|2|3|4|5)|0?\d{1}|0)\s*,\s*[0-9A-F]{1,4}\s*$/.exec(content)!= null)  /// 特殊的两个
              {   //MVRD R15,123
                  content = content.replace(order,'');
-                 res += A_Get_R(content,1);          
+                 res += A_Get_R(content,1);
                  res += content.replace( ('R'+ parseInt( A_Get_R(content,1) ,16 ) ),"").replace(" ","").replace(",",""); // ,后面  e值
              }
-             else if(/^\s*CALA\s+[0-9A-F]{1,4}\s*$/.exec(content)!=null)
-             {   
+             else if(/^\s*CALA\s+[0-9A-F]{1,4}\s*$/.exec(content)!=null) {
                  content = content.replace(order,'');//CALA 2000
                  content = content.replace(" ",'');  // 剩余2000
-                 res += content;            
+                 res += content;
              }
              else /// 找到了指令 但是对应的参数不对 报错
              {

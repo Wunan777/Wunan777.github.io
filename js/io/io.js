@@ -28,7 +28,7 @@
                  "RET 8F NONE",
                  "IRET EF NONE"
                  ];
-     var PORT = {"80":"0000","81":"0000"};
+  var PORT = {"80": "0000", "81": "0000", "90": "0000", "91": "0000"};
      var init_line_len = 5; //&gt\b A 2000 >和空格
      var command_line_len = 7; // A 2000 :
      
@@ -45,8 +45,8 @@
       
        //当前正在编辑行
        // 五种类型参数 R_0,R_1,OFFSET,PORT,MVRD_NEXT
-        Init();
-    }///window end
+        //  Init();
+    };///window end
 
     function Init()
     { 
@@ -60,16 +60,20 @@
       // Button2.addEventListener("click",Jump2);
       // Button3.addEventListener("click",Jump3);
       Tec_Init(TEC1,"TEC1",1);
-      Tec_Init(TEC2,"TEC2",2);
+        // Tec_Init(TEC2,"TEC2",2);
       var T1 = document.getElementById("TEC1");
       var T2 = document.getElementById("TEC2");
       EventUtil.addHandler(T1,"mouseover",function(){
-        TEC1.screen = 1;
-        TEC2.screen = 0;
+          TEC1.screen1 = 1;
+          TEC1.screen2 = 0;
+          TEC1.num = 1
+          // TEC2.screen = 0;
       });
       EventUtil.addHandler(T2,"mouseover",function(){
-        TEC2.screen = 1;
-        TEC1.screen = 0;
+          // TEC2.screen = 1;
+          TEC1.num = 2;
+          TEC1.screen2 = 1;
+          TEC1.screen1 = 0;
       });
       document.onkeydown = keyDown;
       
@@ -107,7 +111,8 @@
          obj.SP = [];
          obj.C = "0";   // 针对每一位的操作,当有进位时为1,没有进位的时候为0;
          obj.Z = "1";   // 一次计算当计算结果为0时,为1,否则为0;
-         obj.screen = 0;
+        obj.screen1 = 0;
+        obj.screen2 = 0;
     }
 
     function keyDown(e) 
@@ -115,7 +120,8 @@
           var keycode; // 按键码
           var realkey; // 字符
           var edit_p = Get_CurrentScreenLine();            // 正在编辑的一行
-          var current_tec = Get_CurrentTec();
+        // var current_tec = Get_CurrentTec();
+        var current_tec = TEC1;
           var status = current_tec.status;
           if (navigator.appName == "Microsoft Internet Explorer")//IE
           {
@@ -182,10 +188,19 @@
           }
           else if( status === 3 ) // G
           {
-             PORT["80"] = keycode.toString(16);
-             // 81 次高位设为1
-             var t = Complete_Binary( Hex_To_Binary( PORT["81"] ) );// 0000 0000 0000 0000
-             PORT["81"] = Binary_To_Hex( t.slice(0,1) + '1' + t.slice(2) );
+              var t;
+              if (current_tec.screen1 == 1) {
+                  PORT["80"] = keycode.toString(16);
+                  // 81 次高位设为1
+                  t = Complete_Binary(Hex_To_Binary(PORT["81"]));// 0000 0000 0000 0000
+                  PORT["81"] = Binary_To_Hex(t.slice(0, 1) + '1' + t.slice(2));
+              } else if (current_tec.screen2 == 1) {
+                  PORT["90"] = keycode.toString(16);
+                  // 81 次高位设为1
+                  t = Complete_Binary(Hex_To_Binary(PORT["91"]));// 0000 0000 0000 0000
+                  PORT["91"] = Binary_To_Hex(t.slice(0, 1) + '1' + t.slice(2));
+              }
+
           }
           else  if( status === 4) // U
           { 
@@ -216,11 +231,11 @@
     {
         var now_screen;
         var line;
-        if( TEC1.screen == 1)
+        if (TEC1.screen1 == 1)
         {
            now_screen = document.getElementById("console1");
         }
-        else if (TEC2.screen == 1) 
+        else if (TEC1.screen2 == 1)
         {
            now_screen = document.getElementById("console2");
         }

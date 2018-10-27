@@ -1,4 +1,9 @@
-﻿    #console { width: 100%; height: 80%; background: #000000; overflow-x: hidden;}
+﻿#console {
+    width: 100%;
+    height: 80%;
+    background: #8F77B5;
+    overflow-x: hidden;
+}
     #console > p { color: white; font-family: 微软雅黑; 
                   line-height: 22px; min-height: 22px; font-size: 14px; 
                   margin-left: .8px;

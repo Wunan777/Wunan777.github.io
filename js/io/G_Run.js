@@ -19,7 +19,7 @@ function ReSet()
 {
     /////// 硬件
     this.SP = [];
-    this.PORT = {"80":"0000","81":"0000"};
+    this.PORT = {"80": "0000", "81": "0000", "90": "0000", "91": "0000"};
     this.R_Arr = {
                  "R0":"",
                  "R1":"",
@@ -264,7 +264,7 @@ function E_To_Fn(content)
           '6F':DI,
           '8F':RET,
           'EF':IRET
-        }
+    };
 
 
       if( content.length < 2 ) // 长度必须大于2
@@ -330,8 +330,8 @@ function E_To_Fn(content)
           }
        }
        else if( Each_Date[2] == 'PORT'  )
-       {    
-          if( (/^(81|80)$/).exec(content)!=null )
+       {
+           if ((/^(81|80|90|91)$/).exec(content) != null)
           {
                 parameter_num.push(content);
                 res.push(parameter_num);

@@ -149,9 +149,9 @@
           {
             str = str + '0';
           }
-          
-    };
-    str = (parseInt(str,2) + 1).toString(2);
+
+    }
+      str = (parseInt(str, 2) + 1).toString(2);
     // 17位时取舍
     if(str.length > 16)
     { 
@@ -217,7 +217,7 @@
               // arr[0] arr[1]
              var res = parseInt( Get_R(arr[0] , obj) , 16 ) - parseInt( Get_R(arr[1] , obj) , 16 );
 
-             if( res > 0 )        
+             if (res >= 0)
              {
                Set_C("1",obj);
              }
@@ -242,8 +242,8 @@
                 else{
                   str = str + "0";
                 }
-              };
-              Check_Z(str,obj);
+              }
+             Check_Z(str, obj);
               Set_R( arr[0] , Binary_To_Hex(str) ,obj);
          }         
          function XOR(arr)
@@ -259,8 +259,8 @@
             else{
               str = str + "1";
             }
-           };
-           Check_Z(str,obj);
+           }
+             Check_Z(str, obj);
            Set_R( arr[0] , Binary_To_Hex(str) , obj );
          }
          function TEST(arr)
@@ -294,8 +294,8 @@
               else{
                 str = str + "0";
               }
-            };
-            Check_Z(str,obj);
+            }
+             Check_Z(str, obj);
             Set_R( arr[0] , Binary_To_Hex(str) , obj );
          }
          function MVRR(arr,obj)
@@ -322,18 +322,20 @@
          }
          function SHR(arr,obj)  /// 无符号左移
          {
-                var str = "";
-                //获得R0
-                var R = Get_R( arr[0] , obj);
-                //
-                str = Complete_Binary(  Hex_To_Binary(R) );
-                Set_C( str.slice(0,1) ,obj );  // 0001 0000 0000 0000 取最高位第一个
-                str = str.slice(1,str.length)+"0" ;
-                str = Binary_To_Hex(str);
 
-                Check_Z(str,obj);
-                //设置R0
-                Set_R( arr[0] , str ,obj);
+             var str = "";
+             //获得R0
+             var R = Get_R(arr[0], obj);
+
+             //
+             str = Complete_Binary(Hex_To_Binary(R));
+             obj.C = str.slice(0, 1);  // 0001 0000 0000 0000 取最高位第一个
+             str = str.slice(1, str.length) + "0";
+             str = Binary_To_Hex(str);
+
+             parseInt(str) == 0 ? obj.Z = "1" : obj.Z = "0";
+             //设置R0
+             Set_R(arr[0], str, obj);
          }
          function SHL(arr,obj) // 无符号右移
          {  
@@ -349,7 +351,9 @@
          { 
             // arr[0] -> 80/81
             // PORT[] -> R0
+             var t = Complete_Binary(Hex_To_Binary(Get_Port("81")));
             Set_R( '0', Get_Port(arr[0]) , obj);
+             Set_Port(arr[0], Binary_To_Hex("00" + t.slice(2)));
          } 
          function PUSH(arr,obj)
          { 
@@ -365,13 +369,15 @@
          {  
              var port_num = arr[0]; //80
              Set_Port( port_num , Get_R("0",obj) );
+             console.log("输出 : " + String.fromCharCode(parseInt(Get_Port(port_num), 16)));
              ///////// 模拟外设输出
-             console.log( "输出 : " + String.fromCharCode( parseInt(Get_Port(port_num),16)) ); 
-             AddCharToLastLine.call(obj, String.fromCharCode( parseInt(Get_Port(port_num),16) ) );
-             /////////
-             var t = Complete_Binary( Hex_To_Binary( Get_Port("81") ) );
-             // t 0100 0000 0000 0000
-             Set_Port("81", Binary_To_Hex( "1" + t.slice(1) ) );
+             if (arr[0] == "80") {
+                 TEC1.num = 1;
+             } else if (arr[0] == "90") {
+                 TEC1.num = 2;
+             }
+             AddCharToLastLine.call(TEC1, String.fromCharCode(parseInt(Get_Port(port_num), 16)));
+
          }
          function RET(arr,obj)
          {   
@@ -380,7 +386,7 @@
              {  // ## 为主函数返回标志
                   console.log("main函数结束！");
                   obj.cursor = -1;
-                  return ; 
+
              }
              else if( add[0] == "$") // 中断返回标志 $0#8190
              { 
