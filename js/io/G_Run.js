@@ -37,8 +37,7 @@ function ReSet()
                  "R15":""
     };
     this.C = "0";   // 针对每一位的操作,当有进位时为1,没有进位的时候为0;
-    this.
-    Z = "0";   // 一次计算当计算结果为0时,为1,否则为0;
+    this.Z = "1";   // 一次计算当计算结果为0时,为1,否则为0;
 }
 
 
@@ -115,19 +114,19 @@ function execute(THIS)
      {
        Cursor_Jump.call( THIS, parseInt(arr_fn[1][0],16) );
        ///下一条
-       setTimeout(execute,100,THIS);
+       timer=setTimeout(execute,100,THIS);
      }
      else if(arr_fn[0] == JRC)
      {
        if ( THIS.C == '1') 
        {
          Cursor_Jump.call( THIS, parseInt(arr_fn[1][0],16) );
-         setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
        else
        {
           THIS.cursor++;
-          setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
      }
      else if( arr_fn[0] == JRNC)
@@ -135,12 +134,12 @@ function execute(THIS)
        if( THIS.C == '0' )
        {
          Cursor_Jump.call( THIS, parseInt(arr_fn[1][0],16) );
-         setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
        else
        {
           THIS.cursor++;
-          setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
      }
      else if( arr_fn[0] == JRZ)
@@ -148,12 +147,12 @@ function execute(THIS)
        if( THIS.Z == '1')
        {
           Cursor_Jump.call( THIS , parseInt(arr_fn[1][0],16) );
-          setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
        else
        {
           THIS.cursor++;
-          setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
      }
      else if( arr_fn[0] == JRNZ)
@@ -161,18 +160,18 @@ function execute(THIS)
        if ( THIS.Z =='0') 
        {
           Cursor_Jump.call( THIS , parseInt(arr_fn[1][0],16) );
-          setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
        else
        {
           THIS.cursor++;
-          setTimeout(execute,100,THIS);
+           timer=setTimeout(execute,100,THIS);
        }
      }
      else if( arr_fn[0] == JMPA)
      {
         Cursor_Jump.call( THIS , parseInt(arr_fn[1][0],16) );
-        setTimeout(execute,100,THIS);
+         timer=setTimeout(execute,100,THIS);
      }
      else
      {
@@ -180,7 +179,7 @@ function execute(THIS)
         parameter_arr = arr_fn[1];
         setTimeout(fn,100,parameter_arr,THIS);
         THIS.cursor++;
-        setTimeout(execute,100,THIS);
+         timer=setTimeout(execute,100,THIS);
      }
      
    

@@ -189,6 +189,7 @@
 
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/assembly/stop.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/assembly/Parse_Init_Order.js"></script>
 <script type="text/javascript" src="js/assembly/Parse_A_Line.js"></script>
@@ -203,7 +204,14 @@
 $("#Start").on('click',function(){
    $("#console").html("<p>TEC-XP Simulation Program</p><p>Version 2.0 2016.3.28</p><p>Computer Architectur DUT</p><p id='now'>> </p>");
    Init();
-})
+});
+
+$("#Reset").on('click',function () {
+
+    // $("#console").append("<p id='now'>> </p>");
+    stopAndReset();
+});
+
 </script>
 
 </html>

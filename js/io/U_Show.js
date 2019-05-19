@@ -158,7 +158,7 @@ function E_To_A(content)  // 0010
      }
      else if( Each_Date[2] == 'PORT'  )
      {    
-        if( (/^(81|80)$/).exec(content)!=null )
+        if( (/^(81|80|90|91)$/).exec(content)!=null )
         {
               res.push(content);
         }

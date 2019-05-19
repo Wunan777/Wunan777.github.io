@@ -116,7 +116,7 @@
     }
 
     function keyDown(e) 
-    {     
+    {
           var keycode; // 按键码
           var realkey; // 字符
           var edit_p = Get_CurrentScreenLine();            // 正在编辑的一行

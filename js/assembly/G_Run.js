@@ -96,46 +96,46 @@ function execute() {
     if (arr_fn[0] == JR) {
         cursor = parseInt(arr_fn[1][0], 16);
         ///下一条
-        setTimeout(execute, 100);
+        timer = setTimeout(execute, 100);
     }
     else if (arr_fn[0] == JRC) {
         if (C == '1') {
             cursor = parseInt(arr_fn[1][0], 16);
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
         else {
             cursor++;
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
     }
     else if (arr_fn[0] == JRNC) {
         if (C == '0') {
             cursor = parseInt(arr_fn[1][0], 16);
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
         else {
             cursor++;
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
     }
     else if (arr_fn[0] == JRZ) {
         if (Z == '1') {
             cursor = parseInt(arr_fn[1][0], 16);
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
         else {
             cursor++;
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
     }
     else if (arr_fn[0] == JRNZ) {
         if (Z == '0') {
             cursor = parseInt(arr_fn[1][0], 16);
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
         else {
             cursor++;
-            setTimeout(execute, 100);
+            timer = setTimeout(execute, 100);
         }
     }
     else {
@@ -143,7 +143,7 @@ function execute() {
         parameter_arr = arr_fn[1];
         setTimeout(fn, 100, parameter_arr);  // 其余先放入后执行
         cursor++;
-        setTimeout(execute, 100);
+        timer = setTimeout(execute, 100);
     }
 
 

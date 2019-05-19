@@ -58,7 +58,7 @@
   <!-- 标题 -->
   <div class="page-header" id="header">
      <h1>I/O分屏</h1>
-     <h4><a href="#">具体步骤请参考教程</a><h4>
+     <h4><a href="#">具体步骤请参考教程</a></h4>
   </div>
    
   <!-- 主要内容 -->
@@ -73,7 +73,7 @@
       
       <div id="control_div">
         <div id="button_area">
-         <div id="Reset" class="button">Reset</div>
+         <div id="Reset1" class="button">Reset</div>
             <div id="Start1" class="button">Start</div>
          <div id="btn1" class="button">Button1</div>
          <div id="btn2" class="button">Button2</div>
@@ -111,7 +111,7 @@
       
       <div id="control_div">
         <div id="button_area">
-         <div id="Reset" class="button">Reset</div>
+         <div id="Reset2" class="button">Reset</div>
             <div id="Start2" class="button">Start</div>
          <div id="btn1" class="button">Button1</div>
          <div id="btn2" class="button">Button2</div>
@@ -226,6 +226,7 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/io/stop.js"></script>
 <script type="text/javascript" src="js/io/Tool.js"></script>
 <script type="text/javascript" src="js/io/Parse_Init_Order.js"></script>
 <script type="text/javascript" src="js/io/Parse_A_Line.js"></script>
@@ -246,7 +247,20 @@
         $("#console1").html("<p>TEC-XP Simulation Program</p><p>Version 2.0 2016.3.28</p><p>Computer Architectur DUT</p><p id='now'>> </p>");
         $("#console2").html("<p>TEC-XP Simulation Program</p><p>Version 2.0 2016.3.28</p><p>Computer Architectur DUT</p><p id='now'>> </p>");
         Init();
-    })
+    });
+
+    $("#Reset1").on('click',function () {
+
+        $("#console1").append("<p id='now'>> </p>");
+        $("#console2").append("<p id='now'>> </p>");
+        stopAndReset();
+    });
+    $("#Reset2").on('click',function () {
+
+        $("#console1").append("<p id='now'>> </p>");
+        $("#console2").append("<p id='now'>> </p>");
+        stopAndReset();
+    });
 </script>
 </html>
 
